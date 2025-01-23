@@ -12,14 +12,45 @@ body {
         padding-right: 6rem; /* 96px */
     }
 }
-h1{
+.header{
     font-size: 1.875rem /* 30px */;
     line-height: 2.25rem /* 36px */;
-    font-weight: 700;
+    font-weight: bold;
+    margin-top:0;
+    margin-bottom:0;
 }
-@media (min-width: 1024px) {
-    h1{
-        font-size: 2.25rem /* 36px */;
-        line-height: 2.5rem /* 40px */;
+.homepageImage{
+    max-width: 400px;
+    height: auto;
+    width: 100%;
+}
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem /* 48px */;
+    padding-bottom: 3rem /* 48px */;
+    gap: 4rem /* 64px */;
+}
+.margin{
+    margin-top: 2rem /* 32px */;
+}
+.rectangle{
+    display: flex;
+    justify-content: space-between;
+    background-color: #FEEDF5;
+    padding: 1rem /* 16px */;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.12); /* 0 4px 6px -1px */
+}
+.rect_text{
+    margin-top:0;
+    margin-bottom:0;
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+}
+@media (min-width: 768px) {
+    .rect_text{
+        font-size: 1rem /* 16px */;
+        line-height: 1.5rem /* 24px */;
     }
 }
