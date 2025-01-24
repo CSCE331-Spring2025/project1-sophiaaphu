@@ -2,4 +2,35 @@
     display: flex;
     flex-direction: column;
     gap: 1rem /* 16px */;
+    margin-top:1rem;
+}
+.upToText{
+    font-size: 1rem /* 16px */;
+    line-height: 1.5rem /* 24px */;
+    margin-top:0;
+    margin-bottom:0;
+}
+@media (min-width: 768px) {
+    .upToText{
+        font-size: 1.125rem /* 18px */;
+        line-height: 1.75rem /* 28px */;
+    }
+}
+.upToContainer{
+    margin-top: 1rem /* 16px */;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem /* 16px */;
+}
+.currPrevContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem /* 16px */;
+}
+.qualHeader{
+    font-size: 1.875rem /* 30px */;
+    line-height: 2.25rem /* 36px */;
+    font-weight: bold;
+    margin-top:2rem;
+    margin-bottom:0rem ;
 }

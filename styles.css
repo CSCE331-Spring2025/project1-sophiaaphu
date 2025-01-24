@@ -61,6 +61,20 @@ body{
     flex-direction: column;
     gap: 0.5rem /* 8px */;
 }
+.dateText{
+    display:none;
+    margin-top:0;
+    margin-bottom:0;
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+}
+@media (min-width: 768px) {
+    .dateText{
+        display:block;
+        font-size: 1rem /* 16px */;
+        line-height: 1.5rem /* 24px */;
+    }
+}
 .updateMargin{
     margin-top: 2rem /* 32px */;
 }
