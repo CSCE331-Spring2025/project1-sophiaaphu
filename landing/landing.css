@@ -6,8 +6,8 @@
     align-items: center;
     justify-content: center;
     white-space: nowrap;
-    border-radius: 0.375rem; /* Equivalent to rounded-md in Tailwind */
-    font-size: 0.875rem; /* Equivalent to text-sm */
+    border-radius: 0.375rem;
+    font-size: 0.875rem; 
     font-weight: 500;
     padding: 0.5rem 1rem;
     box-shadow: 0 3px 3px rgb(0 0 0 / 0.12);

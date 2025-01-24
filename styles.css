@@ -1,4 +1,4 @@
-body {
+body{
     display: flex;
     flex-direction: column;
     font-family: Inter;
@@ -6,7 +6,7 @@ body {
     padding-left: 2rem /* 32px */;
     padding-right: 2rem /* 32px */;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1024px){
     body {
         padding-left: 6rem; /* 96px */
         padding-right: 6rem; /* 96px */
@@ -40,7 +40,7 @@ body {
     background-color: #FEEDF5;
     padding: 1rem /* 16px */;
     border-radius: 0.75rem;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.12); /* 0 4px 6px -1px */
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.12);
 }
 .rect_text{
     margin-top:0;
@@ -48,7 +48,7 @@ body {
     font-size: 0.875rem /* 14px */;
     line-height: 1.25rem /* 20px */;
 }
-@media (min-width: 768px) {
+@media (min-width: 768px){
     .rect_text{
         font-size: 1rem /* 16px */;
         line-height: 1.5rem /* 24px */;
@@ -61,4 +61,52 @@ body {
 }
 .updateMargin{
     margin-top: 2rem /* 32px */;
+}
+.projectCard{
+    margin-top: 1rem;  /* 16px */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;  /* 8px */
+}
+@media (min-width: 1024px){
+    .projectCard {
+        flex-direction: row;
+    }
+}
+.project-info{
+    display: flex;
+    flex-direction: column;
+    background-color: #FEEDF5;
+    padding: 1rem; /* 16px */
+    border-radius: 0.5rem; /* 8px */
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 768px) {
+    .project-info {
+        padding: 2rem; /* 32px */
+    }
+}
+@media (min-width: 1024px) {
+    .project-info {
+        width: 33.3333%;
+    }
+}
+.projectTitle{
+    font-size: 1.125rem /* 18px */;
+    line-height: 1.75rem /* 28px */;
+    font-weight: 600;
+    margin-top:0;
+    margin-bottom:0;
+}
+.spacing{
+    display:flex;
+    flex-direction: column;
+    gap:1rem /* 16px */;
+}
+.projectText{
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+    margin-top:0;
+    margin-bottom:0;
 }
