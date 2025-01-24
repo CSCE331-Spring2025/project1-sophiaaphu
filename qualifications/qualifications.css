@@ -34,3 +34,39 @@
     margin-top:2rem;
     margin-bottom:0rem ;
 }
+.resumeContainer{
+    background-color: #FEEDF5;
+    margin-left: -2rem; /* 96px */
+    margin-right: -2rem; /* 96px */
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.12);
+}
+@media (min-width: 1024px){
+    .resumeContainer{
+        margin-left: -6rem; /* 96px */
+        margin-right: -6rem; /* 96px */
+    }
+}
+.banner{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem; /* 96px */
+    margin-right: 2rem; /* 96px */
+}
+@media (min-width: 1024px){
+    .banner{
+        margin-left: 6rem; /* 96px */
+        margin-right: 6rem; /* 96px */
+    }
+}
+.bannerText{
+    font-size: 1.25rem /* 18px */;
+    line-height: 1.75rem /* 28px */;
+    margin-top:0;
+    margin-bottom:0.5rem;
+}
+.bannerPara{
+    font-size: 1rem /* 16px */;
+    line-height: 1.5rem /* 24px */;
+    margin-top:0;
+    margin-bottom:0rem;
+}
