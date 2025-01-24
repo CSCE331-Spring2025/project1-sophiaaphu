@@ -50,3 +50,32 @@
         align-items: center;
     }
 }
+.dateText{
+    display:none;
+    margin-top:0;
+    margin-bottom:0;
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+}
+@media (min-width: 768px) {
+    .dateText{
+        display:block;
+        font-size: 1rem /* 16px */;
+        line-height: 1.5rem /* 24px */;
+    }
+}
+.updateMargin{
+    margin-top: 2rem /* 32px */;
+    margin-bottom: 2rem /* 32px */;
+}
+.updateTextMargin{
+    margin-bottom: 1rem /* 16px */;
+}
+.mobileMargin{
+    margin-top: 2rem /* 32px */;
+}
+@media (min-width: 1024px) {
+    .mobileMargin{
+        margin-top: 0px;
+    }
+}

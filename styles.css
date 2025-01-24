@@ -54,3 +54,11 @@ body {
         line-height: 1.5rem /* 24px */;
     }
 }
+.cardMargins{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem /* 8px */;
+}
+.updateMargin{
+    margin-top: 2rem /* 32px */;
+}
