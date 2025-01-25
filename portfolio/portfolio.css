@@ -9,3 +9,6 @@
         flex-direction: row;
     }
 }
+.mobileRightImage{
+    margin-right: -2rem; 
+}

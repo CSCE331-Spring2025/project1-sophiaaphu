@@ -185,7 +185,6 @@ body{
 .projectImageContainer {
     display: flex;
     align-items: flex-end;
-
 }
 .leftImage {
     margin-left: -2rem; 
