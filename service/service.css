@@ -1,0 +1,50 @@
+.serviceSubheadText{
+    margin-top:1rem;
+    margin-bottom:1rem;
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+}
+@media (min-width: 768px){
+    .serviceSubheadText{
+        font-size: 1rem /* 16px */;
+        line-height: 1.5rem /* 24px */;
+    }
+}
+.serviceContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem /* 16px */;
+}
+.serviceCard{
+    display: flex;
+    flex-direction: column;
+    background-color: #FEEDF5;
+    padding: 2rem /* 16px */;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.12);
+    gap: 1.25rem /* 16px */;
+}
+.serviceTextCard{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem /* 16px */;
+}
+.serviceTitle{
+    font-weight: 600;
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
+    margin-top:0rem;
+    margin-bottom:0rem;
+}
+.serviceText{
+    margin-top:0rem;
+    margin-bottom:0rem;
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+}
+@media (min-width: 768px){
+    .serviceText{
+        font-size: 1rem /* 16px */;
+        line-height: 1.5rem /* 24px */;
+    }
+}
