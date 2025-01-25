@@ -1,0 +1,11 @@
+.projectCard2{
+    margin-top: 1rem;  /* 16px */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;  /* 8px */
+}
+@media (min-width: 1024px){
+    .projectCard2{
+        flex-direction: row;
+    }
+}
