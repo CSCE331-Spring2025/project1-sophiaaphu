@@ -159,7 +159,6 @@ body{
 .projectContainer {
     display: flex;
     gap: 1rem; 
-    background-color: #DAB6BC;
     padding-top: 1rem; /* 16px */
     padding-left: 1rem;
     padding-right: 1rem;
@@ -167,6 +166,18 @@ body{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     justify-content: center;
     overflow:hidden
+}
+.bgAggieSeek{
+    background-color: #DAB6BC;
+}
+.bgTAO{
+    background-color:#FEB1BE;
+}
+.bgSwipe{
+    background-color:#AAEAED;
+}
+.bgSplit{
+    background-color:#C0C0C0;
 }
 @media (min-width: 768px) {
     .projectContainer {
