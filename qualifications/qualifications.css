@@ -48,7 +48,7 @@
     margin-left: -2rem; /* 96px */
     margin-right: -2rem; /* 96px */
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.12);
-    max-height:15rem;
+    max-height:18rem;
     align-items:center;
     margin-bottom:4rem;
 }
@@ -64,7 +64,7 @@
     align-items:center;
     margin-left: 2rem; /* 96px */
     margin-right: 2rem; /* 96px */
-    max-height:15rem;
+    max-height:18rem;
 }
 @media (min-width: 1024px){
     .banner{
