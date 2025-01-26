@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinosaur Game</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+        body {
+            margin: 0; 
+            font-family: 'Inter', sans-serif; 
+            background-color: #FFDCE8;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav style="background-color: #FFB6C1; padding: 15px; text-align: center;">
+        <a href="index.html" style="color: white; text-decoration: none; margin: 0 15px; font-size: 18px;">Home</a>
+        <a href="qualifications.html" style="color: white; text-decoration: none; margin: 0 15px; font-size: 18px;">Qualifications</a>
+        <a href="portfolio.html" style="color: white; text-decoration: none; margin: 0 15px; font-size: 18px;">Portfolio</a>
+        <a href="service.html" style="color: white; text-decoration: none; margin: 0 15px; font-size: 18px;">Service</a>
+        <a href="genai.html" style="color: white; text-decoration: none; margin: 0 15px; font-size: 18px;">Gen AI</a>
+    </nav>
+
+    <!-- Heading -->
+    <h1 style="text-align: center; color: #FF69B4; margin-top: 50px;">Dinosaur Game</h1>
+
+    <!-- Prompt -->
+    <p style="text-align: center; font-size: 18px; color: #FF1493;">
+        hello chat gpt, can you please create a page in html and inline css that contains the dinosaur game. I want a pink-themed color scheme with a background color of #FFDCE8. Can you also create a navbar with my name on it and routes to home (index.html), qualifications (qualifications.html), portfolio (portfolio.html), service (service.html), and gen ai (genai.html). Can you also please include this prompt in the webpage. Thank you!
+    </p>
+    <p style="text-align: center; font-size: 18px; color: #FF1493;">
+        hi chat gpt, i think the dinosaur game is a little tweaked since my dinosaur just goes straight down when I press the space bar. Can you please untweak this and change the font to Inter. Can you also please include the previous prompt and this prompt as well thank you!
+    </p>
+
+    <!-- Dinosaur Game Canvas -->
+    <div style="display: flex; justify-content: center; margin-top: 50px;">
+        <canvas id="gameCanvas" width="600" height="200" style="border: 2px solid #FF69B4;"></canvas>
+    </div>
+
+    <script>
+        let canvas = document.getElementById('gameCanvas');
+        let ctx = canvas.getContext('2d');
+        let dino = { x: 50, y: 150, width: 50, height: 50, dy: 0, gravity: 1, jumpPower: -15, onGround: true };
+        let obstacles = [];
+        let gameSpeed = 5;
+        let isGameOver = false;
+
+        function drawDino() {
+            ctx.fillStyle = '#FF1493';
+            ctx.fillRect(dino.x, dino.y, dino.width, dino.height);
+        }
+
+        function drawObstacle() {
+            ctx.fillStyle = '#FF69B4';
+            obstacles.forEach(obstacle => {
+                ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+            });
+        }
+
+        function updateGame() {
+            if (isGameOver) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            dino.dy += dino.gravity;
+            dino.y += dino.dy;
+            if (dino.y > 150) {
+                dino.y = 150;
+                dino.dy = 0;
+                dino.onGround = true;
+            }
+
+            obstacles.forEach(obstacle => {
+                obstacle.x -= gameSpeed;
+                if (obstacle.x + obstacle.width < 0) {
+                    obstacles.shift();
+                }
+                if (
+                    dino.x < obstacle.x + obstacle.width &&
+                    dino.x + dino.width > obstacle.x &&
+                    dino.y < obstacle.y + obstacle.height &&
+                    dino.y + dino.height > obstacle.y
+                ) {
+                    isGameOver = true;
+                    alert('Game Over! Refresh to play again.');
+                }
+            });
+
+            drawDino();
+            drawObstacle();
+        }
+
+        function jump() {
+            if (dino.onGround) {
+                dino.dy = dino.jumpPower;
+                dino.onGround = false;
+            }
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.code === 'Space') jump();
+        });
+
+        setInterval(() => {
+            obstacles.push({ x: canvas.width, y: 150, width: 30, height: 50 });
+        }, 2000);
+
+        setInterval(updateGame, 20);
+    </script>
+</body>
+</html>
+
+
