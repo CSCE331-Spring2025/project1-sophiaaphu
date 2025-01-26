@@ -242,3 +242,16 @@ body{
 .navButton:hover {
     background-color: #FEEDF5;
 }
+.iconsContainer{
+    display: flex;
+    gap: 1rem; 
+    align-items:center;
+}
+.iconsDiv{
+    display: flex;
+    gap: 1rem; 
+}
+.icon{
+    font-size:1.25rem;
+    color:#E91E63;
+}
