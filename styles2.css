@@ -33,6 +33,7 @@ body{
     font-weight: bold;
     margin-top:0;
     margin-bottom:1rem;
+    color:white
 }
 @media (min-width: 1024px) {
     .featuredHeader{
@@ -107,7 +108,10 @@ body{
 .projectInfo{
     display: flex;
     flex-direction: column;
-    background-color: #FEEDF5;
+    background-color: #f2fdff;
+    border-width: 4px;
+    border-style: solid;
+    border-color:#04d9ff;
     padding: 1rem; /* 16px */
     border-radius: 0.5rem; /* 8px */
     justify-content: space-between;
@@ -258,7 +262,7 @@ body{
 }
 .icon{
     font-size:1.25rem;
-    color:#E91E63;
+    color:#FF6ec7;
 }
 .iconA{
     text-decoration:none;
@@ -279,7 +283,7 @@ body{
     margin-left:1rem;
 }
 .aboutButton{
-    background-color:#FEEDF5;
+    background-color:#e2fafe;
     border: none;
     outline: none;
     display: inline-flex;
@@ -291,6 +295,9 @@ body{
     font-weight: 500;
     padding: 0.5rem 1rem;
     box-shadow: 0 3px 3px rgb(0 0 0 / 0.12);
+    border-width: 2px;
+    border-style: solid;
+    border-color:#04d9ff;
 }
 .introP{
     font-size: 0.875rem /* 14px */;
@@ -330,6 +337,7 @@ body{
     max-width: 400px;
     height: auto;
     width: 100%;
+
 }
 .updateMargin{
     margin-top: 2rem /* 32px */;
