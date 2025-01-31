@@ -57,11 +57,11 @@ body{
     border-width: 3px;
     border-style: solid;
     border-color:#bc1dfe;
+    border-radius: 0.75rem;
     display: flex;
     flex-direction:column;
     background-color: #F4dafe;
     padding: 1rem /* 16px */;
-    border-radius: 0.75rem;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.12);
 }
 .rect_text{
@@ -250,6 +250,7 @@ body{
 }
 .navButton:hover {
     background-color: #FFbff3;
+    color:black;
 }
 .iconsContainer{
     display: flex;
@@ -567,4 +568,13 @@ body{
     padding: 1rem /* 16px */;
     border-radius: 0.75rem;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.12);
+}
+.aLink{
+    color: white;
+}
+.iframee{
+    border-width: 4px;
+    border-style: solid;
+    border-color: #fe019a;
+    border-radius: 0.5rem;
 }
