@@ -177,7 +177,6 @@ body{
     border-width: 4px;
     border-style: solid;
     border-color: #fe019a;
-
 }
 .bgAggieSeek{
     background-color: #fedaf0;
@@ -250,7 +249,7 @@ body{
     border-color:#FF5BFF;
 }
 .navButton:hover {
-    background-color: #FF5BFF;
+    background-color: #FFbff3;
 }
 .iconsContainer{
     display: flex;
@@ -417,7 +416,10 @@ body{
     }
 }
 .resumeContainer{
-    background-color: #FEEDF5;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #fe019a;
+    background-color: #fed2ed;
     justify-content: center; 
     margin-top:4rem;
     margin-left: -2rem; /* 96px */
