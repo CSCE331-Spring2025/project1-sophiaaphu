@@ -53,11 +53,12 @@ body{
     margin-top: 2rem /* 32px */;
 }
 .rectangle{
+
     border-width: 3px;
     border-style: solid;
     border-color:#bc1dfe;
     display: flex;
-    justify-content: space-between;
+    flex-direction:column;
     background-color: #F4dafe;
     padding: 1rem /* 16px */;
     border-radius: 0.75rem;
@@ -66,6 +67,7 @@ body{
 .rect_text{
     margin-top:0;
     margin-bottom:0;
+    font-weight:600;
     font-size: 0.875rem /* 14px */;
     line-height: 1.25rem /* 20px */;
 }
@@ -76,9 +78,16 @@ body{
     }
 }
 .cardMargins{
+    width:100%;
+    display: flex;
+    justify-content:space-between;
+    gap: 0.5rem /* 8px */;
+}
+.rectMargin {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem /* 8px */;
+    width: 50%; /* Ensures each column takes up half the screen */
+    gap: 0.5rem;
 }
 .dateText{
     display:none;
