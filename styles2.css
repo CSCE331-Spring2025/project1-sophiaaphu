@@ -53,7 +53,7 @@ body{
     margin-top: 2rem /* 32px */;
 }
 .rectangle{
-
+    width:100%;
     border-width: 3px;
     border-style: solid;
     border-color:#bc1dfe;
@@ -80,13 +80,14 @@ body{
 .cardMargins{
     width:100%;
     display: flex;
+    flex-direction:column;
     justify-content:space-between;
     gap: 0.5rem /* 8px */;
 }
 .rectMargin {
     display: flex;
-    flex-direction: column;
-    width: 50%; /* Ensures each column takes up half the screen */
+    flex-direction: row;
+    width: 100%; /* Ensures each column takes up half the screen */
     gap: 0.5rem;
 }
 .dateText{
@@ -377,6 +378,7 @@ body{
     margin-top:1rem;
 }
 .upToText{
+    color:white;
     font-size: 1rem /* 16px */;
     line-height: 1.5rem /* 24px */;
     margin-top:0;
@@ -400,6 +402,7 @@ body{
     gap: 0.5rem /* 16px */;
 }
 .qualHeader{
+    color:white;
     font-size: 1.875rem /* 30px */;
     line-height: 2.25rem /* 36px */;
     font-weight: bold;
@@ -461,6 +464,7 @@ body{
     margin-bottom:1rem;
     font-size: 0.875rem /* 14px */;
     line-height: 1.25rem /* 20px */;
+    color:white;
 }
 @media (min-width: 768px){
     .rect_text2{
@@ -473,6 +477,7 @@ body{
     margin-bottom:0rem;
     font-size: 0.875rem /* 14px */;
     line-height: 1.25rem /* 20px */;
+    color:white;
 }
 @media (min-width: 768px){
     .rect_text3{
@@ -542,4 +547,22 @@ body{
         font-size: 1rem /* 16px */;
         line-height: 1.5rem /* 24px */;
     }
+}
+.interestsContainer{
+    display:flex;
+    gap:1rem;
+}
+.interest{
+    width:50%;
+}
+.rectangle2{
+    background-color: #f2fdff;
+    border-width: 4px;
+    border-style: solid;
+    border-color:#04d9ff;
+    display: flex;
+    flex-direction:column;
+    padding: 1rem /* 16px */;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.12);
 }

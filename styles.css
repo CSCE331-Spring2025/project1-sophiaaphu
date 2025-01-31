@@ -534,3 +534,11 @@ body{
         line-height: 1.5rem /* 24px */;
     }
 }
+.rectangle2{
+    display: flex;
+    justify-content: space-between;
+    background-color: #FEEDF5;
+    padding: 1rem /* 16px */;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.12);
+}
