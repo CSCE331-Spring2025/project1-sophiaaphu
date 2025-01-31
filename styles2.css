@@ -530,3 +530,16 @@ body{
         line-height: 1.5rem /* 24px */;
     }
 }
+.qualsText{
+    margin-top:0;
+    margin-bottom:0;
+    color:white;
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+}
+@media (min-width: 768px){
+    .qualsText{
+        font-size: 1rem /* 16px */;
+        line-height: 1.5rem /* 24px */;
+    }
+}
