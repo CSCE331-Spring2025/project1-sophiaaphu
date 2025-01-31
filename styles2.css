@@ -53,9 +53,12 @@ body{
     margin-top: 2rem /* 32px */;
 }
 .rectangle{
+    border-width: 3px;
+    border-style: solid;
+    border-color:#bc1dfe;
     display: flex;
     justify-content: space-between;
-    background-color: #FEEDF5;
+    background-color: #F4dafe;
     padding: 1rem /* 16px */;
     border-radius: 0.75rem;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.12);
@@ -100,11 +103,6 @@ body{
     flex-direction: column;
     gap: 0.5rem;  /* 8px */
 }
-@media (min-width: 1024px){
-    .projectCard {
-        flex-direction: row;
-    }
-}
 .projectInfo{
     display: flex;
     flex-direction: column;
@@ -121,11 +119,6 @@ body{
 @media (min-width: 768px) {
     .projectInfo {
         padding: 2rem; /* 32px */
-    }
-}
-@media (min-width: 1024px) {
-    .projectInfo {
-        width: 33.3333%;
     }
 }
 .projectTitle{
@@ -147,10 +140,10 @@ body{
     margin-bottom:0;
 }
 .projectButton{
-    background-color:#FEEDF5;
-    border-width: 1px;
+    background-color:#e2fafe;
+    border-width: 2px;
     border-style: solid;
-    border-color: #ABABAB;
+    border-color:#04d9ff;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -170,13 +163,17 @@ body{
     border-radius: 0.5rem; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     justify-content: center;
-    overflow:hidden
+    overflow:hidden;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #fe019a;
+
 }
 .bgAggieSeek{
-    background-color: #DAB6BC;
+    background-color: #fedaf0;
 }
 .bgTAO{
-    background-color:#FEB1BE;
+    background-color:#fedaf0;
 }
 .bgSwipe{
     background-color:#AAEAED;
@@ -190,12 +187,6 @@ body{
         padding-left: 2rem; 
         padding-right: 2rem; 
         padding-top: 2rem;
-    }
-}
-@media (min-width: 1024px) {
-    .projectContainer {
-        width: 66.6666%;
-        margin: 0 auto;
     }
 }
 .projectImageContainer {
@@ -268,10 +259,10 @@ body{
     text-decoration:none;
 }
 .styleButton{
-    background-color:#FEEDF5;
+    background-color:#e2fafe;
     border-width: 2px;
     border-style: solid;
-    border-color: #ABABAB;
+    border-color: #04d9ff;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -284,7 +275,6 @@ body{
 }
 .aboutButton{
     background-color:#e2fafe;
-    border: none;
     outline: none;
     display: inline-flex;
     align-items: center;
