@@ -1,10 +1,13 @@
 body{
     display: flex;
     flex-direction: column;
-    font-family: Inter;
+    font-family: 'Oxanium';
     background-color: #341539;
     padding-left: 2rem /* 32px */;
     padding-right: 2rem /* 32px */;
+}
+button{
+    font-family: 'Oxanium';
 }
 @media (min-width: 1024px){
     body {
@@ -185,10 +188,10 @@ body{
     background-color:#fedaf0;
 }
 .bgSwipe{
-    background-color:#AAEAED;
+    background-color:#fedaf0;
 }
 .bgSplit{
-    background-color:#C0C0C0;
+    background-color:#fedaf0;
 }
 @media (min-width: 768px) {
     .projectContainer {
