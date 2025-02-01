@@ -1,115 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinosaur Game</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-        body {
-            margin: 0; 
-            font-family: 'Inter', sans-serif; 
-            background-color: #FFDCE8;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pink Chrome Dinosaur Game with Navbar & Scoring</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body & Background */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FFDCE8; /* light pink background */
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Navbar Styling */
+    nav {
+      background-color: #ff69b4; /* hot pink */
+      padding: 10px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffe6f9;
+    }
+
+    /* Container for game and score */
+    .game-container {
+      position: relative;
+      text-align: center;
+    }
+
+    /* Score Display */
+    #scoreDisplay {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff1493; /* deep pink */
+      z-index: 10;
+    }
+
+    /* Canvas Styling */
+    canvas {
+      display: block;
+      margin: 0 auto;
+      background-color: #FFDCE8;
+    }
+
+    /* Prompt Section */
+    .prompts {
+      padding: 20px;
+      background-color: #ffb6c1; /* light pink */
+      margin: 20px;
+      border-radius: 8px;
+    }
+
+    .prompts h2 {
+      margin-bottom: 10px;
+    }
+
+    .prompts p {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+  </style>
 </head>
 <body>
-    
-    <!-- Navbar -->
-    <nav style="background-color: #FFB6C1; padding: 15px; text-align: center;">
-        <a href="./index.html" style="color: white; text-decoration: none; margin: 0 15px; font-size: 18px;">Home</a>
-        <a href="./qualifications.html" style="color: white; text-decoration: none; margin: 0 15px; font-size: 18px;">Qualifications</a>
-        <a href="./portfolio.html" style="color: white; text-decoration: none; margin: 0 15px; font-size: 18px;">Portfolio</a>
-        <a href="./service.html" style="color: white; text-decoration: none; margin: 0 15px; font-size: 18px;">Service</a>
-        <a href="./genai.html" style="color: white; text-decoration: none; margin: 0 15px; font-size: 18px;">Gen AI</a>
-    </nav>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="qualifications.html">Qualifications</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="genai.html">AI</a></li>
+    </ul>
+  </nav>
 
-    <!-- Heading -->
-    <h1 style="text-align: center; color: #FF69B4; margin-top: 50px;">Dinosaur Game</h1>
+  <!-- Game Container -->
+  <div class="game-container">
+    <!-- Score Display -->
+    <div id="scoreDisplay">Score: 0</div>
+    <!-- Game Canvas -->
+    <canvas id="gameCanvas"></canvas>
+  </div>
 
-    <!-- Prompt -->
-    <p style="text-align: center; font-size: 18px; color: #FF1493;">
-        hello chat gpt, can you please create a page in html and inline css that contains the dinosaur game. I want a pink-themed color scheme with a background color of #FFDCE8. Can you also create a navbar with my name on it and routes to home (index.html), qualifications (qualifications.html), portfolio (portfolio.html), service (service.html), and gen ai (genai.html). Can you also please include this prompt in the webpage. Thank you!
-    </p>
-    <p style="text-align: center; font-size: 18px; color: #FF1493;">
-        hi chat gpt, i think the dinosaur game is a little tweaked since my dinosaur just goes straight down when I press the space bar. Can you please untweak this and change the font to Inter. Can you also please include the previous prompt and this prompt as well thank you!
-    </p>
+  <!-- Prompt Section -->
+  <div class="prompts">
+    <h2>Prompts</h2>
+    <p><strong>Prompt 1:</strong> can you make the google chrome dinosuar game in html, css, and javascript but the colors are pink</p>
+    <p><strong>Prompt 2:</strong> can you modify this code so it has a scoring system, a navbar that leads to a homepage (index.html), qualifications (qualifications.html), portfolio (portfolio.html), service (service.html), and ai (genai.html). can you also include a scoring system for this game and add this prompt and the previous prompt onto the page. thank you :)</p>
+  </div>
 
-    <!-- Dinosaur Game Canvas -->
-    <div style="display: flex; justify-content: center; margin-top: 50px;">
-        <canvas id="gameCanvas" width="600" height="200" style="border: 2px solid #FF69B4;"></canvas>
-    </div>
+  <script>
+    // Get canvas and context
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
 
-    <script>
-        let canvas = document.getElementById('gameCanvas');
-        let ctx = canvas.getContext('2d');
-        let dino = { x: 50, y: 150, width: 50, height: 50, dy: 0, gravity: 1, jumpPower: -15, onGround: true };
-        let obstacles = [];
-        let gameSpeed = 5;
-        let isGameOver = false;
+    // Set canvas dimensions to fill the viewport width; height is set to a fixed value for better game experience.
+    canvas.width = window.innerWidth;
+    canvas.height = 400;
 
-        function drawDino() {
-            ctx.fillStyle = '#FF1493';
-            ctx.fillRect(dino.x, dino.y, dino.width, dino.height);
+    // Game settings
+    const groundHeight = 100;
+
+    // Score variable
+    let score = 0;
+    const scoreDisplay = document.getElementById('scoreDisplay');
+
+    // Dinosaur object (the "dino")
+    const dino = {
+      x: 50,
+      y: canvas.height - groundHeight - 50,
+      width: 50,
+      height: 50,
+      dy: 0,
+      jumpForce: 15,
+      gravity: 0.8,
+      grounded: false,
+      jump() {
+        if (this.grounded) {
+          this.dy = -this.jumpForce;
+          this.grounded = false;
+        }
+      },
+      update() {
+        this.dy += this.gravity;
+        this.y += this.dy;
+
+        // Prevent falling below the ground
+        if (this.y + this.height >= canvas.height - groundHeight) {
+          this.y = canvas.height - groundHeight - this.height;
+          this.dy = 0;
+          this.grounded = true;
+        }
+      },
+      draw() {
+        ctx.fillStyle = "#ff69b4"; // hot pink for the dinosaur
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+      }
+    };
+
+    // Obstacles array and timer variables
+    let obstacles = [];
+    let obstacleTimer = 0;
+    const obstacleInterval = 1500; // spawn a new obstacle every 1500 ms
+
+    // Function to create a new obstacle
+    function createObstacle() {
+      const size = Math.random() * 30 + 20; // random size between 20 and 50
+      const obstacle = {
+        x: canvas.width,
+        y: canvas.height - groundHeight - size,
+        width: size,
+        height: size,
+        speed: 6
+      };
+      obstacles.push(obstacle);
+    }
+
+    // Listen for keyboard input to jump
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' || e.code === 'ArrowUp') {
+        dino.jump();
+      }
+    });
+
+    // For mobile devices, use touch to jump.
+    window.addEventListener('touchstart', () => {
+      dino.jump();
+    });
+
+    // Main game loop using requestAnimationFrame
+    let lastTime = 0;
+    function gameLoop(timestamp) {
+      if (!lastTime) lastTime = timestamp;
+      const deltaTime = timestamp - lastTime;
+      lastTime = timestamp;
+
+      // Clear the canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw the ground (using a lighter pink)
+      ctx.fillStyle = "#ffb6c1"; // light pink for ground
+      ctx.fillRect(0, canvas.height - groundHeight, canvas.width, groundHeight);
+
+      // Update and draw the dinosaur
+      dino.update();
+      dino.draw();
+
+      // Update score based on time
+      score += deltaTime * 0.01; // Increase score gradually
+      scoreDisplay.textContent = "Score: " + Math.floor(score);
+
+      // Manage obstacle creation
+      obstacleTimer += deltaTime;
+      if (obstacleTimer > obstacleInterval) {
+        createObstacle();
+        obstacleTimer = 0;
+      }
+
+      // Update and draw obstacles
+      for (let i = obstacles.length - 1; i >= 0; i--) {
+        const obs = obstacles[i];
+        obs.x -= obs.speed;
+
+        // Check for collision with the dinosaur
+        if (
+          dino.x < obs.x + obs.width &&
+          dino.x + dino.width > obs.x &&
+          dino.y < obs.y + obs.height &&
+          dino.y + dino.height > obs.y
+        ) {
+          // Collision detected! Reset the game.
+          obstacles = [];
+          dino.y = canvas.height - groundHeight - dino.height;
+          dino.dy = 0;
+          dino.grounded = true;
+          score = 0;
+          break;
         }
 
-        function drawObstacle() {
-            ctx.fillStyle = '#FF69B4';
-            obstacles.forEach(obstacle => {
-                ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
-            });
+        // Remove obstacles that have moved off-screen
+        if (obs.x + obs.width < 0) {
+          obstacles.splice(i, 1);
+        } else {
+          ctx.fillStyle = "#ff1493"; // deep pink for obstacles
+          ctx.fillRect(obs.x, obs.y, obs.width, obs.height);
         }
+      }
 
-        function updateGame() {
-            if (isGameOver) return;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Loop the game
+      requestAnimationFrame(gameLoop);
+    }
 
-            dino.dy += dino.gravity;
-            dino.y += dino.dy;
-            if (dino.y > 150) {
-                dino.y = 150;
-                dino.dy = 0;
-                dino.onGround = true;
-            }
+    // Start the game loop
+    requestAnimationFrame(gameLoop);
 
-            obstacles.forEach(obstacle => {
-                obstacle.x -= gameSpeed;
-                if (obstacle.x + obstacle.width < 0) {
-                    obstacles.shift();
-                }
-                if (
-                    dino.x < obstacle.x + obstacle.width &&
-                    dino.x + dino.width > obstacle.x &&
-                    dino.y < obstacle.y + obstacle.height &&
-                    dino.y + dino.height > obstacle.y
-                ) {
-                    isGameOver = true;
-                    alert('Game Over! Refresh to play again.');
-                }
-            });
-
-            drawDino();
-            drawObstacle();
-        }
-
-        function jump() {
-            if (dino.onGround) {
-                dino.dy = dino.jumpPower;
-                dino.onGround = false;
-            }
-        }
-
-        document.addEventListener('keydown', function (event) {
-            if (event.code === 'Space') jump();
-        });
-
-        setInterval(() => {
-            obstacles.push({ x: canvas.width, y: 150, width: 30, height: 50 });
-        }, 2000);
-
-        setInterval(updateGame, 20);
-    </script>
+    // Adjust canvas size on window resize
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      // Reset ground and dino position based on new canvas width if needed.
+    });
+  </script>
 </body>
 </html>
+
 
 
