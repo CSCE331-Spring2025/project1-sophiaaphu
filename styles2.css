@@ -358,16 +358,12 @@ body{
     gap:2;
 }
 .projectCard2{
-    margin-top: 1rem;  /* 16px */
+    margin-top: 1.5rem;  /* 16px */
     display: flex;
     flex-direction: column;
     gap: 0.5rem;  /* 8px */
 }
-@media (min-width: 1024px){
-    .projectCard2{
-        flex-direction: row;
-    }
-}
+
 .mobileRightImage{
     margin-right: -2rem; 
 }
