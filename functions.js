@@ -10,7 +10,7 @@ function toggleStyleSheet(){
    
     // 1 (c) Determine new stylesheet file name
     let newStyle, newLogo, newPic;
-    if(currentStyle === "styles.css"){
+    if(currentStyle === "./styles.css"){
         newStyle = "./styles2.css"
         newLogo = "./assets/sophia-phu-logo-white.png";
         newPic = "./assets/homepage-pic-dark.png";
